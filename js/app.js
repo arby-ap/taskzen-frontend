@@ -1,11 +1,11 @@
-const API = "https://taskflow-api-production-0b0b.up.railway.app/tasks";
+const API = "http://localhost:3000/tasks";
 
 let tasks = [];
 
 const form = document.getElementById("task-form");
 const list = document.getElementById("task-list");
 
-// ✅ LOAD TASKS (GET)
+// LOAD TASKS (GET)
 async function loadTasks() {
   try {
     const res = await fetch(API);
@@ -18,7 +18,7 @@ async function loadTasks() {
   }
 }
 
-// ✅ ADD TASK (POST)
+// ADD TASK (POST)
 async function addTask(task) {
   try {
     const res = await fetch(API, {
@@ -31,13 +31,13 @@ async function addTask(task) {
 
     if (!res.ok) throw new Error("Create failed");
 
-    await loadTasks();
+    loadTasks();
   } catch (err) {
     alert(err.message);
   }
 }
 
-// ✅ DELETE TASK
+// DELETE TASK
 async function deleteTask(id) {
   try {
     const res = await fetch(`${API}/${id}`, {
@@ -46,13 +46,13 @@ async function deleteTask(id) {
 
     if (!res.ok) throw new Error("Delete failed");
 
-    await loadTasks();
+    loadTasks();
   } catch (err) {
     alert(err.message);
   }
 }
 
-// ✅ UPDATE TASK (PUT)
+// UPDATE TASK (PUT)
 async function updateTask(id, updatedTask) {
   try {
     const res = await fetch(`${API}/${id}`, {
@@ -65,13 +65,13 @@ async function updateTask(id, updatedTask) {
 
     if (!res.ok) throw new Error("Update failed");
 
-    await loadTasks();
+    loadTasks();
   } catch (err) {
     alert(err.message);
   }
 }
 
-// ✅ FORM SUBMIT
+// FORM SUBMIT
 form.addEventListener("submit", (e) => {
   e.preventDefault();
 
@@ -83,7 +83,7 @@ form.addEventListener("submit", (e) => {
   }
 
   const task = {
-    title: form.title.value,
+    title: form.title,value,
     description: form.description.value,
     priority: form.priority.value,
     status: form.status.value,
@@ -94,9 +94,9 @@ form.addEventListener("submit", (e) => {
   form.reset();
 });
 
-// ✅ RENDER FUNCTION
+// RENDER FUNCTION
 function renderTasks() {
-  list.innerHTML = "";
+  list.innerHTML = '';
 
   tasks.forEach(t => {
     const li = document.createElement("li");
@@ -104,8 +104,8 @@ function renderTasks() {
 
     li.innerHTML = `
       <strong>${t.title}</strong><br>
-      <small>${t.description || ""}</small><br>
       ${t.status} | ${t.priority}<br>
+      <small>${t.description || ""}</small><br>
       Due: ${t.dueDate || "N/A"}
     `;
 
@@ -125,11 +125,16 @@ function renderTasks() {
     });
 
     btnContainer.append(del, toggle);
-    li.appendChild(btnContainer);
+    li.append(btnContainer);
 
     list.appendChild(li);
   });
+
+  
 }
 
-// ✅ LOAD ON PAGE START
+
+
+
+
 document.addEventListener("DOMContentLoaded", loadTasks);
