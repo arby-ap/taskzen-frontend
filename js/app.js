@@ -1,4 +1,4 @@
-const API = "https://taskzen-api-production.up.railway.app/tasks";
+const API = "https://taskzen-backend-production.up.railway.app/tasks";
 
 
 let tasks = [];
@@ -6,7 +6,7 @@ let tasks = [];
 const form = document.getElementById("task-form");
 const list = document.getElementById("task-list");
 
-// ✅ LOAD TASKS (GET)
+
 async function loadTasks() {
   try {
     const res = await fetch(API);
@@ -19,7 +19,7 @@ async function loadTasks() {
   }
 }
 
-// ✅ ADD TASK (POST)
+
 async function addTask(task) {
   try {
     const res = await fetch(API, {
@@ -53,7 +53,7 @@ async function deleteTask(id) {
   }
 }
 
-// ✅ UPDATE TASK (PUT)
+
 async function updateTask(id, updatedTask) {
   try {
     const res = await fetch(`${API}/${id}`, {
@@ -72,7 +72,7 @@ async function updateTask(id, updatedTask) {
   }
 }
 
-// ✅ FORM SUBMIT
+
 form.addEventListener("submit", (e) => {
   e.preventDefault();
 
@@ -95,7 +95,7 @@ form.addEventListener("submit", (e) => {
   form.reset();
 });
 
-// ✅ RENDER FUNCTION
+
 function renderTasks() {
   list.innerHTML = "";
 
@@ -110,7 +110,7 @@ function renderTasks() {
       Due: ${t.dueDate || "N/A"}
     `;
 
-    // ✅ BUTTON CONTAINER
+
     const btnContainer = document.createElement("div");
     btnContainer.className = "task-buttons";
 
@@ -132,5 +132,4 @@ function renderTasks() {
   });
 }
 
-// ✅ INITIAL LOAD
 document.addEventListener("DOMContentLoaded", loadTasks);

@@ -1,7 +1,7 @@
 /* FULL VIEWPORT CONTROL */
 html, body {
   height: 100%;
-  margin: 0; /* VERY IMPORTANT (removes hidden scroll cause) */
+  margin: 0; 
 }
 
 /* DESIGN TOKENS */
