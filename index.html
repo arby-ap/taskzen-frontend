@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TaskZen — Task Manager</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+
+  
+<body>
+
+<header>
+  <h1>TaskZen</h1>
+</header>
+
+<main class="container">
+
+  <section class="form-section" aria-label="Add task">
+    <form id="task-form">
+
+      <label for="title">Title</label>
+      <input type="text" id="title" name="title" required placeholder="Enter task title">
+
+      <label for="description">Description</label>
+      <textarea id="description" name="description" placeholder="Task details"></textarea>
+
+      <label for="priority">Priority</label>
+      <select id="priority" name="priority">
+        <option value="low">Low</option>
+        <option value="medium">Medium</option>
+        <option value="high">High</option>
+      </select>
+
+      <label for="status">Status</label>
+      <select id="status" name="status">
+        <option value="pending">Pending</option>
+        <option value="in-progress">In Progress</option>
+        <option value="done">Done</option>
+      </select>
+
+      <label for="dueDate">Due Date</label>
+      <input type="date" id="dueDate" name="dueDate">
+
+      <button type="submit">Add Task</button>
+
+    </form>
+  </section>
+
+  <section class="task-section" aria-label="Task list">
+    <ul id="task-list"></ul>
+  </section>
+
+</main>
+  
+  
+  
+
+
+<footer>
+  <p>© 2026 ARBY PUNO</p>
+</footer>
+
+<script src="js/app.js" defer></script>
+
+</body>
+</html>
