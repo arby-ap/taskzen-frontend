@@ -1,68 +1,119 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TaskZen — Task Manager</title>
-  <link rel="stylesheet" href="css/styles.css">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>TaskZen</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/landing.css">
+
 </head>
 
-  
 <body>
 
-<header>
-  <h1>TaskZen</h1>
+<header class="navbar">
+
+    <div class="logo">
+        <h2>TaskZen</h2>
+    </div>
+
+    <nav>
+
+        <a href="index.html">Home</a>
+
+        <a href="about.html">About</a>
+
+        <a href="contact.html">Contact</a>
+
+        <a href="login.html">Login</a>
+
+        <a class="join-btn" href="register.html">Join Now</a>
+
+    </nav>
+
 </header>
 
-<main class="container">
+<section class="hero">
 
-  <section class="form-section" aria-label="Add task">
-    <form id="task-form">
+    <div class="hero-content">
 
-      <label for="title">Title</label>
-      <input type="text" id="title" name="title" required placeholder="Enter task title">
+        <span class="badge">Find Your Productivity Flow</span>
 
-      <label for="description">Description</label>
-      <textarea id="description" name="description" placeholder="Task details"></textarea>
+        <h1>
+            A Simpler Way<br>
+            To Stay Productive.
+        </h1>
 
-      <label for="priority">Priority</label>
-      <select id="priority" name="priority">
-        <option value="low">Low</option>
-        <option value="medium">Medium</option>
-        <option value="high">High</option>
-      </select>
+        <p>
 
-      <label for="status">Status</label>
-      <select id="status" name="status">
-        <option value="pending">Pending</option>
-        <option value="in-progress">In Progress</option>
-        <option value="done">Done</option>
-      </select>
+            TaskZen helps students, professionals, and teams stay productive
+            with an elegant task management experience.
 
-      <label for="dueDate">Due Date</label>
-      <input type="date" id="dueDate" name="dueDate">
+        </p>
 
-      <button type="submit">Add Task</button>
+        <div class="buttons">
 
-    </form>
-  </section>
+            <a href="register.html" class="primary-btn">
 
-  <section class="task-section" aria-label="Task list">
-    <ul id="task-list"></ul>
-  </section>
+                Get Started
 
-</main>
-  
-  
-  
+            </a>
 
+            <a href="login.html" class="secondary-btn">
+
+                Login
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section class="features">
+
+<h2>Why TaskZen?</h2>
+
+<div class="cards">
+
+<div class="card">
+
+<h3>📝 Easy Task Creation</h3>
+
+<p>Create tasks within seconds.</p>
+
+</div>
+
+<div class="card">
+
+<h3>⭐ Priority Tracking</h3>
+
+<p>Organize important tasks easily.</p>
+
+</div>
+
+<div class="card">
+
+<h3>📅 Due Dates</h3>
+
+<p>Never miss a deadline again.</p>
+
+</div>
+
+</div>
+
+</section>
 
 <footer>
-  <p>© 2026 ARBY PUNO</p>
-</footer>
 
-<script src="js/app.js" defer></script>
+<p>© 2026 TaskZen</p>
+
+</footer>
 
 </body>
 </html>

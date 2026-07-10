@@ -1,0 +1,298 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:'Poppins',sans-serif;
+background:#F5F1E8;
+color:#F8F7F2;
+}
+
+.hero{
+height:100vh;
+background:
+linear-gradient(rgba(0,0,0,.18),rgba(0,0,0,.18)),
+url("../images/zengarden.jpg");
+background-size:cover;
+background-position:center;
+
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:20px;   
+animation:zoomHero 18s ease-in-out infinite alternate;
+
+}
+@keyframes zoomHero{
+from{
+background-size:100%;
+}
+to{
+background-size:108%;
+}
+}
+
+.navbar{
+position:fixed;
+top:20px;
+left:50%;
+transform:translateX(-50%);
+width:92%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px 30px;
+background:rgba(45,60,35,.45);
+backdrop-filter:blur(18px);
+border:1px solid rgba(255,255,255,.2);
+border-radius:50px;
+z-index:999;
+}
+
+.logo{
+color:#cbf1be;
+letter-spacing:1px;
+}
+
+
+
+nav{
+display:flex;
+gap:25px;
+align-items:center;
+}
+
+nav a{
+text-decoration:none;
+color:white;
+font-weight:500;
+transition:.3s;
+}
+
+nav a:hover{
+color:#D8C3A5;
+}
+
+.join-btn{
+background:#6A8D73;
+padding:12px 25px;
+border-radius:30px;
+color:white;
+transition:.3s;
+}
+
+.join-btn:hover{
+background:#55735C;
+transform:translateY(-3px);
+}
+
+.badge{
+display:inline-block;
+padding:8px 18px;
+border-radius:30px;
+background:white;
+color:#55735C;
+font-weight:600;
+margin-bottom:25px;
+}
+
+.hero h1{
+font-size:72px;
+font-weight:700;
+line-height:1.1;
+margin-bottom:25px;
+color:#FDFBF7;
+text-shadow:
+0 0 15px rgba(0,0,0,.25),
+0 8px 30px rgba(0,0,0,.35);
+
+}
+
+.hero p{
+max-width:700px;
+margin:auto;
+font-size:20px;
+line-height:1.8;
+color:#ECE8DF;
+margin-bottom:40px;
+}
+
+.buttons{
+display:flex;
+justify-content:center;
+gap:20px;
+}
+
+.primary-btn{
+background:#6A8D73;
+padding:16px 42px;
+border-radius:40px;
+text-decoration:none;
+color:white;
+transition:.35s;
+}
+
+.secondary-btn{
+background:rgba(255,255,255,.9);
+padding:16px 42px;
+border-radius:40px;
+text-decoration:none;
+color:#2E2E2E;
+transition:.35s;
+}
+
+.primary-btn,
+.secondary-btn,
+.join-btn{
+transition:.35s ease;
+}
+
+.primary-btn:hover{
+background:#55735C;
+transform:translateY(-4px);
+box-shadow:0 12px 25px rgba(0,0,0,25);
+}
+
+.secondary-btn:hover{
+transform:translateY(-4px);
+background:#D8C3A5;
+color:white;
+}
+
+.primary-btn:hover,
+.secondary-btn:hover,
+.join-btn:hover{
+
+transform:translateY(-5px) scale(1.03);
+
+}
+.features{
+padding:120px 10%;
+background:#F5F1E8;
+color:#2F3A2F;
+}
+
+.features h2{
+text-align:center;
+margin-bottom:60px;
+font-size:40px;
+}
+
+.cards{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:30px;
+}
+
+.card{
+background:rgba(255,255,255,.75);
+backdrop-filter:blur(15px);
+padding:45px;
+border-radius:25px;
+box-shadow:0 15px 35px rgba(0,0,0,.08);
+border:1px solid rgba(255,255,255,.3);
+transition:.35s;
+text-align:center;
+}
+
+
+.card:hover{
+transform:translateY(-10px);
+}
+
+footer{
+background:#2F3A2F;
+padding:25px;
+color:white;
+text-align:center;
+margin-top:120px;
+}
+
+.hero-content{
+animation: fadeUp 1.2s ease;
+}
+@keyframes fadeUp{
+from{
+opacity:0;
+transform:translateY(50px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+
+/* ---------- MOBILE ---------- */
+
+@media (max-width:768px){
+
+.navbar{
+
+flex-direction:column;
+
+padding:20px;
+
+gap:15px;
+
+border-radius:25px;
+
+}
+
+nav{
+
+flex-wrap:wrap;
+
+justify-content:center;
+
+gap:15px;
+
+}
+
+.hero{
+
+padding:120px 20px 50px;
+
+height:auto;
+
+min-height:100vh;
+
+}
+
+.hero h1{
+
+font-size:42px;
+
+}
+
+.hero p{
+
+font-size:16px;
+
+}
+
+.buttons{
+
+flex-direction:column;
+
+align-items:center;
+
+}
+
+.cards{
+
+grid-template-columns:1fr;
+
+}
+
+.features{
+
+padding:80px 20px;
+
+}
+
+}
+

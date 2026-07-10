@@ -1,0 +1,537 @@
+/* ---------- RESET ---------- */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:#F5F1E8;
+    color:#2F3A2F;
+}
+
+/* ---------- HEADER ---------- */
+
+header{
+    position:sticky;
+    top:0;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 60px;
+    background:rgba(255,255,255,.75);
+    backdrop-filter:blur(18px);
+    box-shadow:0 8px 25px rgba(0,0,0,.08);
+    z-index:100;
+
+}
+
+.logo h2{
+    color:#55735C;
+    font-size:30px;
+}
+
+nav{
+    display:flex;
+    gap:35px;
+}
+
+nav a{
+    text-decoration:none;
+    color:#2F3A2F;
+    font-weight:500;
+    transition:.3s;
+}
+
+nav a:hover{
+    color:#6A8D73;
+}
+
+/* ---------- WELCOME ---------- */
+
+.welcome{
+    text-align:center;
+    padding:60px 20px 40px;
+}
+
+.welcome h1{
+    font-size:52px;
+    color:#55735C;
+}
+
+.welcome p{
+    margin-top:15px;
+    font-size:18px;
+    color:#666;
+}
+
+/* ---------- STATS ---------- */
+
+.stats{
+    width:90%;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+    margin-bottom:50px;
+
+}
+
+.stat-card{
+    background:white;
+    padding:35px;
+    border-radius:25px;
+    text-align:center;
+    box-shadow:0 15px 30px rgba(0,0,0,.08);
+    transition:.35s;
+}
+
+.stat-card:hover{
+    transform:translateY(-8px);
+}
+
+.stat-card h2{
+    font-size:42px;
+    color:#55735C;
+}
+
+.stat-card p{
+    margin-top:10px;
+    color:#777;
+}
+
+/* ---------- DASHBOARD ---------- */
+
+.dashboard{
+
+    width:90%;
+    margin:auto;
+    display:grid;
+    grid-template-columns:360px 1fr;
+    gap:35px;
+    margin-bottom:80px;
+
+}
+
+/* ---------- FORM ---------- */
+
+.form-section{
+
+    background:white;
+    border-radius:30px;
+    padding:30px;
+    box-shadow:0 15px 35px rgba(0,0,0,.08);
+}
+
+.form-section h2{
+    margin-bottom:25px;
+    color:#55735C;
+
+}
+
+form{
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+}
+
+input,
+textarea,
+select{
+
+    padding:15px;
+    border-radius:15px;
+    border:1px solid #ddd;
+    font-family:'Poppins';
+    font-size:15px;
+}
+
+textarea{
+    resize:none;
+    min-height:120px;
+}
+
+button{
+
+    padding:16px;
+    border:none;
+    border-radius:15px;
+    background:#6A8D73;
+    color:white;
+    cursor:pointer;
+    font-size:16px;
+    transition:.3s;
+
+}
+
+button:hover{
+    background:#55735C;
+    transform:translateY(-2px);
+
+}
+
+/* ---------- TASK SECTION ---------- */
+
+.task-section{
+    background:white;
+    border-radius:30px;
+    padding:30px;
+    box-shadow:0 15px 35px rgba(0,0,0,.08);
+
+}
+
+.task-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:30px;
+}
+
+.task-header h2{
+
+color:#55735C;
+
+font-size:22px;
+
+font-weight:600;
+
+}
+
+.task-header input{
+    width:260px;
+}
+
+.task-section{
+
+color:#55735C;
+
+}
+
+.form-section{
+
+color:#4E5E50;
+
+}
+
+.form-section p{
+
+line-height:1.8;
+
+color:#5F6F61;
+
+}
+
+.form-section ul{
+
+margin-top:20px;
+
+line-height:1.9;
+
+color:#55735C;
+
+}
+
+
+
+/* ---------- TASK LIST ---------- */
+#task-list{
+    list-style:none;
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+}
+
+/* ---------- TASK CARD ---------- */
+
+.task-card{
+    background:#F9F9F9;
+    border-left:8px solid #6A8D73;
+    border-radius:20px;
+    padding:20px;
+    box-shadow:0 8px 20px rgba(0,0,0,.05);
+    transition:.3s;
+
+}
+
+.task-card:hover{
+    transform:translateY(-5px);
+}
+
+/* ---------- PRIORITY COLORS ---------- */
+.task-card.high{
+    border-left-color:#D9534F;
+}
+
+.task-card.medium{
+    border-left-color:#F0AD4E;
+}
+
+.task-card.low{
+    border-left-color:#5CB85C;
+}
+
+/* ---------- BUTTONS ---------- */
+.task-buttons{
+    display:flex;
+    gap:12px;
+    margin-top:15px;
+}
+
+.task-buttons button{
+    flex:1;
+}
+
+
+/* ---------- MOBILE ---------- */
+
+@media(max-width:768px){
+
+header{
+
+flex-direction:column;
+
+padding:20px;
+
+gap:20px;
+
+}
+
+nav{
+
+flex-wrap:wrap;
+
+justify-content:center;
+
+}
+
+.welcome h1{
+
+font-size:34px;
+
+}
+
+.stats{
+
+grid-template-columns:1fr;
+
+}
+
+.dashboard{
+
+grid-template-columns:1fr;
+
+}
+
+.form-section{
+
+order:1;
+
+}
+
+.task-section{
+
+order:2;
+
+}
+
+.task-header{
+
+flex-direction:column;
+
+align-items:stretch;
+
+gap:15px;
+
+}
+
+.task-header input{
+
+width:100%;
+
+}
+
+.task-buttons{
+
+flex-direction:column;
+
+}
+
+}
+
+.task-header input{
+
+width:280px;
+
+background:#F8F8F8;
+
+border:1px solid #D8E2D5;
+
+color:#55735C;
+
+}
+
+
+
+.task-header input::placeholder{
+
+color:#8A9A88;
+
+}
+
+
+/* ---------- PRIORITY BADGES ---------- */
+
+.priority{
+
+padding:5px 12px;
+
+border-radius:20px;
+
+font-size:12px;
+
+font-weight:600;
+
+color:white;
+
+}
+
+.priority.high{
+
+background:#D9534F;
+
+}
+
+.priority.medium{
+
+background:#F0AD4E;
+
+}
+
+.priority.low{
+
+background:#5CB85C;
+
+}
+
+/* ---------- CARD ANIMATION ---------- */
+
+.task-card{
+
+animation:fadeCard .4s ease;
+
+}
+
+@keyframes fadeCard{
+
+from{
+
+opacity:0;
+
+transform:translateY(20px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+#cancelEdit{
+
+margin-top:10px;
+
+background:#55735C;
+
+}
+
+#cancelEdit:hover{
+
+background:#6A8D73;
+
+}
+
+.admin-banner{
+
+width:92%;
+
+margin:15px auto;
+
+padding:18px 25px;
+
+background:linear-gradient(135deg,#55735C,#6A8D73);
+
+color:white;
+
+border-radius:20px;
+
+box-shadow:0 10px 25px rgba(85, 115, 92, 0.35);
+
+}
+
+.admin-banner h3{
+
+margin-bottom:5px;
+
+font-size:22px;
+
+}
+
+.admin-banner p{
+
+opacity:.9;
+
+}
+
+/* ============================
+   AI CARD
+============================ */
+
+.ai-card{
+
+margin-top:18px;
+
+padding:18px;
+
+background:#F3F8F2;
+
+border-left:5px solid #6A8D73;
+
+border-radius:18px;
+
+box-shadow:0 8px 18px rgba(0,0,0,.08);
+
+animation:fadeCard .3s ease;
+
+}
+
+.ai-card h4{
+
+color:#55735C;
+
+margin-bottom:12px;
+
+}
+
+#aiPriorityText{
+
+font-weight:700;
+
+font-size:18px;
+
+margin-bottom:10px;
+
+}
+
+#aiReason{
+
+color:#666;
+
+line-height:1.5;
+
+}

@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>TaskZen Dashboard</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/dashboard.css">
+
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">
+
+<h2>🌿 TaskZen</h2>
+
+</div>
+
+<nav>
+
+<a href="index.html">Home</a>
+<a href="about.html">About</a>
+<a href="contact.html">Contact</a>
+
+<a href="#" onclick="logout()">Logout</a>
+
+
+
+</nav>
+
+</header>
+
+
+<section class="welcome">
+
+<h1 id="welcomeMessage">
+
+Welcome Back 👋
+
+</h1>
+
+<p>
+
+Stay organized and keep your productivity flowing.
+
+</p>
+
+</section>
+
+
+<section class="stats">
+
+<div class="stat-card">
+
+<h2 id="totalTasks">0</h2>
+
+<p>Total Tasks</p>
+
+</div>
+
+<div class="stat-card">
+
+<h2 id="pendingTasks">0</h2>
+
+<p>Pending</p>
+
+</div>
+
+<div class="stat-card">
+
+<h2 id="doneTasks">0</h2>
+
+<p>Completed</p>
+
+</div>
+
+</section>
+
+
+<main class="dashboard">
+
+<section class="form-section">
+
+<h2>Add New Task</h2>
+
+<form id="task-form">
+
+<input
+type="text"
+id="title"
+name="title"
+placeholder="Task Title"
+required>
+
+<textarea
+id="description"
+name="description"
+placeholder="Description"></textarea>
+
+
+<select id="priority" name="priority">
+<option value="low">Low Priority</option>
+
+<option value="medium">Medium Priority</option>
+
+<option value="high">High Priority</option>
+
+</select>
+
+<div id="aiSuggestion" class="ai-card" style="display:none;">
+
+<h4>🤖 TaskZen AI Assistant</h4>
+
+<p id="aiPriorityText"></p>
+
+<p id="aiReason"></p>
+
+</div>
+
+<select id="status" name="status">
+
+<option value="pending">Pending</option>
+
+<option value="in-progress">In Progress</option>
+
+<option value="done">Done</option>
+
+</select>
+
+<input
+type="date"
+id="dueDate"
+name="dueDate">
+
+<button type="submit">
+
+Add Task
+
+</button>
+
+<button
+type="button"
+id="cancelEdit"
+style="display:none;">
+
+Cancel
+
+</button>
+
+</form>
+
+</section>
+
+
+<section class="task-section">
+
+<div class="task-header">
+
+<h2>Your Tasks</h2>
+
+<input
+type="text"
+placeholder="Search Tasks...">
+
+</div>
+
+<ul id="task-list"></ul>
+
+</section>
+
+</main>
+
+<script src="js/auth.js"></script>
+<script src="js/app.js"></script>
+
+<script>
+
+const user =
+JSON.parse(localStorage.getItem("taskzenUser"));
+
+if(user){
+
+document.getElementById("welcomeMessage").textContent =
+
+`Welcome back, ${user.name}! 🌿`;
+
+}
+
+</script>
+
+</body>
+
+</html>
