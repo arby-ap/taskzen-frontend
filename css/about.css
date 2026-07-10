@@ -8,9 +8,14 @@ box-sizing:border-box;
 }
 
 body{
-
 font-family:'Poppins',sans-serif;
-background:#F5F1E8;
+background:
+linear-gradient(rgba(245,241,232,.88),rgba(245,241,232,.88)),
+url("../images/zenAbout.jpg");
+background-size:cover;
+background-position:center;
+background-repeat:no-repeat;
+background-attachment:fixed;
 color:#2F3A2F;
 
 }
