@@ -470,6 +470,10 @@ function scheduleAI(){
 
 }
 
-titleInput.addEventListener("input", scheduleAI);
+if(titleInput && descriptionInput){
 
-descriptionInput.addEventListener("input", scheduleAI);
+    titleInput.addEventListener("input", scheduleAI);
+
+    descriptionInput.addEventListener("input", scheduleAI);
+
+}
