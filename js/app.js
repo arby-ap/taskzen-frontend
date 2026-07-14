@@ -1,4 +1,4 @@
-const API = "https://taskzen-backend-production.up.railway.app/tasks";
+const API = "https://taskzen-backend-6w8c.onrender.com/";
 
 let tasks = [];
 let editingTaskId = null;
