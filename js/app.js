@@ -325,69 +325,6 @@ search.addEventListener("input",renderTasks);
 
 }
 
-// =============================
-// AI PRIORITY SUGGESTION
-// =============================
-
-const aiBtn = document.getElementById("aiPriority");
-
-if (aiBtn) {
-
-    aiBtn.addEventListener("click", () => {
-
-        const title = document.getElementById("title").value.toLowerCase().trim();
-        const description = document.getElementById("description").value.toLowerCase().trim();
-
-        const text = title + " " + description;
-
-        let priority = "low";
-        let reason = "This appears to be a routine task.";
-
-        // HIGH PRIORITY
-        if (
-            text.includes("exam") ||
-            text.includes("project") ||
-            text.includes("deadline") ||
-            text.includes("presentation") ||
-            text.includes("assignment") ||
-            text.includes("urgent") ||
-            text.includes("final")
-        ) {
-
-            priority = "high";
-            reason = "This task appears urgent or related to an important deadline.";
-
-        }
-
-        // MEDIUM PRIORITY
-        else if (
-            text.includes("study") ||
-            text.includes("research") ||
-            text.includes("meeting") ||
-            text.includes("report") ||
-            text.includes("quiz")
-        ) {
-
-            priority = "medium";
-            reason = "This task requires preparation but is not immediately urgent.";
-
-        }
-
-        document.getElementById("priority").value = priority;
-
-        alert(
-`BEEEP TaskZen AI Recommendation BEEP
-
-Suggested Priority: ${priority.toUpperCase()}
-
-Reason:
-${reason}`
-        );
-
-    });
-
-}
-
 // ============================
 // TASKZEN AI ASSISTANT
 // ============================
